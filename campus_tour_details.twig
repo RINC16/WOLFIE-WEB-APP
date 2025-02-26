@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Tour Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Include: Common header across all pages for consistency -->
+    {% include 'index1.twig' %}
+
+    <main class="site-main">
+        <section class="content-section">
+            <!-- Title and Introduction to the Campus Tour Page -->
+            <h1>Campus Tour Details</h1>
+            <p>Welcome to the detailed page about our campus tours. This tour guide will provide you with a comprehensive overview of our academic facilities, student life areas, and much more.</p>
+
+            <!-- List of Highlights: Specific areas and features of the campus tours -->
+            <div class="tour-highlights">
+                <h2>Highlights of Our Tour</h2>
+                <ul>
+                    <li>Introduction to the main campus</li>
+                    <li>Visit to our state-of-the-art laboratories</li>
+                    <li>Exploration of our library and student centers</li>
+                    <li>Meet and greet with faculty and student representatives</li>
+                </ul>
+            </div>
+
+            <!-- Gallery: Images of various campus locations -->
+            <div class="gallery">
+                <img src="images/campus_main.jpg" alt="Main Campus Building">
+                <img src="images/campus_lab.jpg" alt="Laboratory">
+                <img src="images/campus_library.jpg" alt="Library">
+            </div>
+
+            <!-- Campus Map: Embedded Google Maps for campus navigation -->
+            <div class="campus-map">
+                <h2>Explore Our Campus Map</h2>
+                <!-- Paste your Google Maps iframe code here -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.9801138425496!2d-2.130058025016915!3d52.588052772079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487083cb0f37dc97%3A0x9cb8e3cc0509a0d0!2sUniversity%20of%20Wolverhampton!5e0!3m2!1sen!2suk!4v1740067245124!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer Include: Common footer across all pages for consistency -->
+    {% include 'index2.twig' %}
+    <script src="js/scripts.js"></script>
+</body>
+</html>
