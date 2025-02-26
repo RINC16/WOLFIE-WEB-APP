@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Day Companion App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    {% include 'index1.twig' %}
+
+    <main class="site-main">
+        <div class="hero-section">
+            <div class="featured-books">
+                <!-- Campus Tour Card -->
+                <a href="campus_tour_details.php" class="book-card-link">
+                    <div class="book-card">
+                        <img src="images/campus.jpg" alt="Campus Tour">
+                        <h4>Campus Tour</h4>
+                        <p>Quick view of our campus</p>
+                    </div>
+                </a>
+                <!-- Event Schedules Card -->
+                <a href="event_schedules.php" class="book-card-link">
+                    <div class="book-card">
+                        <img src="images/application.png" alt="Event Schedules">
+                        <h4>Event Schedules</h4>
+                        <p>Check Out Upcoming Events</p>
+                    </div>
+                </a>
+                <!-- University Life Card -->
+                <a href="university_life.php" class="book-card-link">
+                    <div class="book-card">
+                        <img src="images/university-logo.png" alt="University Life">
+                        <h4>University Life</h4>
+                        <p>A view Into University living</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <h2>Welcome to Our Open Day!</h2>
+        <p>Experience our University.</p>
+    </main>
+
+    {% include 'index2.twig' %}
+    <script src="js/Ajax.js"></script>
+</body>
+</html>
