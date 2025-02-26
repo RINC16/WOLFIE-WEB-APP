@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Schedules</title>
+    <link rel="stylesheet" href="event_styles.css">
+</head>
+<body>
+    {% include 'index1.twig' %}
+
+    <main class="site-main">
+        <h1>Event Schedule</h1>
+        <div class="event-schedule">
+            {% for event in events %}
+            <div class="event">
+                <h2>{{ event.title }}</h2>
+                <p>{{ event.description }}</p>
+                <p>Time: {{ event.start_time|date("g:i A") }} - {{ event.end_time|date("g:i A") }}</p>
+                <p>Location: {{ event.location }}</p>
+                <button class="add-reminder" data-event-name="{{ event.title }}" data-event-time="{{ event.start_time }}">Add to Calendar</button>
+            </div>
+            {% else %}
+            <p>No events scheduled.</p>
+            {% endfor %}
+        </div>
+    </main>
+
+    {% include 'index2.twig' %}
+    <script src="js/scripts.js"></script>
+</body>
+</html>
