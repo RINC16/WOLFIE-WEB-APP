@@ -1,0 +1,289 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.4;
+    color: #333;
+    background-color: #e6ffe6; /* Light green background */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #f3eeee; /* background color */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+header a {
+    color: #fff;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0fff0; /* Lighter green background */
+    color: #333;
+}
+
+.hero-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    background-color: #66b266; /* Green button */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #558a55; /* Darker green on hover */
+}
+
+/* Featured Books */
+.featured-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* Indicate clickability */
+}
+
+.book-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.book-card h4 {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #2a662a; /* Green text */
+}
+
+.book-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #66b266; /* Green link */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-books {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Adjust spacing between nav items */
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: #66b266;  /* A shade of green that matches your theme */
+    border-radius: 5px;
+}
+.book-card-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent elements */
+}
+
+.book-card {
+    cursor: pointer; /* Changes the mouse cursor to a pointer to indicate it's clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.book-card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Adds shadow for better visual effect */
+}
+
+.campus-map iframe {
+    width: 100%; /* Full width for better responsiveness */
+    height: 450px; /* Fixed height but you can adjust based on design */
+    border: 3px solid #ccc; /* More pronounced border */
+    border-radius: 8px; /* Softened corners */
+    margin: 20px 0; /* Adds vertical space around the map */
+}
+
+@media (max-width: 768px) {
+    .campus-map iframe {
+        height: 300px; /* Shorter map on smaller screens */
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 15px;
+    margin: 20px 0; /* Top and bottom margin */
+}
+
+.gallery img {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Consistent with other elements */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtler shadow */
+}
+
+.content-section {
+    background-color: #fff; /* Clearer contrast */
+    padding: 25px;
+    border-radius: 10px; /* Increased radius for softness */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Enhanced shadow for depth */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #333; /* Optimal text color for readability */
+}
+
+.content-section h1, .content-section h2 {
+    color: #2a662a; /* Theme color for headers */
+}
+
+.content-section p, .content-section ul {
+    font-size: 1rem; /* Standard font size */
+}
+
+.event-schedule {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.event {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.event h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.event p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.add-reminder {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-reminder:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-schedule {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .event {
+        padding: 10px;
+    }
+}
