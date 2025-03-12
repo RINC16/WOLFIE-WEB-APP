@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Ensure proper rendering and touch zooming on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the web page -->
     <title>Open Day Companion App</title>
+    <!-- Link to external stylesheet for styling the page -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Include the header template (index1.twig) -->
     {% include 'index1.twig' %}
 
+    <!-- Main Content Area -->
     <main class="site-main">
-        <div class="hero-section">
+        <!-- Hero Section with a Welcome Message -->
+        <section class="hero-section">
+            <h1>Welcome to Our Open Day!</h1>
+            <p>Discover what makes our university the perfect place for your higher education.</p>
+            <!-- Display an image related to the university campus -->
+            <img src="images/hero-image.jpg" alt="University Campus" class="hero-image">
+        </section>
+
+        <!-- Featured Sections: Highlights of the Open Day -->
+        <section class="featured-sections">
+            <h2>Explore Our Campus</h2>
             <div class="featured-books">
                 <!-- Campus Tour Card -->
-                <a href="campus_tour_details.php" class="book-card-link">
-                    <div class="book-card">
+                <article class="book-card">
+                    <a href="campus_tour_details.php" class="book-card-link">
+                        <!-- Image representing the campus tour -->
                         <img src="images/campus.jpg" alt="Campus Tour">
-                        <h4>Campus Tour</h4>
-                        <p>Quick view of our campus</p>
-                    </div>
-                </a>
+                        <h3>Campus Tour</h3>
+                        <p>Take a virtual tour of our campus and see what we have to offer.</p>
+                    </a>
+                </article>
+                
                 <!-- Event Schedules Card -->
-                <a href="event_schedules.php" class="book-card-link">
-                    <div class="book-card">
+                <article class="book-card">
+                    <a href="event_schedules.php" class="book-card-link">
+                        <!-- Image related to event schedules -->
                         <img src="images/application.png" alt="Event Schedules">
-                        <h4>Event Schedules</h4>
-                        <p>Check Out Upcoming Events</p>
-                    </div>
-                </a>
+                        <h3>Event Schedules</h3>
+                        <p>Check out the schedule for Open Day and plan your visit.</p>
+                    </a>
+                </article>
+                
                 <!-- University Life Card -->
-                <a href="university_life.php" class="book-card-link">
-                    <div class="book-card">
+                <article class="book-card">
+                    <a href="university_life.php" class="book-card-link">
+                        <!-- Image symbolizing university life -->
                         <img src="images/university-logo.png" alt="University Life">
-                        <h4>University Life</h4>
-                        <p>A view Into University living</p>
-                    </div>
-                </a>
+                        <h3>University Life</h3>
+                        <p>Learn about student life and the vibrant community at our university.</p>
+                    </a>
+                </article>
             </div>
-        </div>
-        
-        <h2>Welcome to Our Open Day!</h2>
-        <p>Experience our University.</p>
+        </section>
+
+        <!-- Call to Action: Encouraging users to register -->
+        <section class="call-to-action">
+            <h2>Register for Open Day</h2>
+            <p>Ready to explore more? Register now to secure your spot for our next Open Day.</p>
+            <!-- Registration button leading to the sign-up page -->
+            <a href="#" class="button">Register Now</a>
+        </section>
     </main>
 
+    <!-- Include the footer template (index2.twig) -->
     {% include 'index2.twig' %}
+    
+    <!-- JavaScript file for handling AJAX requests -->
     <script src="js/Ajax.js"></script>
 </body>
 </html>
