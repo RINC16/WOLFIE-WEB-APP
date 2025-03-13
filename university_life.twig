@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Life</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS for styling -->
+</head>
+<body>
+    {% include 'index1.twig' %} <!-- Include the header file -->
+
+    <main class="site-main">
+        <section class="content-section">
+            <h1>University Life</h1>
+            <p>Discover the vibrant and diverse student life at our university.</p>
+
+            <div class="university-life-sections">
+                <!-- Loop through universityLife array to display different sections -->
+                {% for key, section in universityLife %}
+                <div class="section">
+                    <img src="{{ section.image }}" alt="{{ section.title }}"> <!-- Display image for each section -->
+                    <h2>{{ section.title }}</h2> <!-- Display section title -->
+                    <p>{{ section.description }}</p> <!-- Display section description -->
+
+                    <!-- Conditional links based on section type -->
+                    {% if key == 'accommodation' %}
+                        <a href="accommodation.php" class="learn-more">Learn More</a>
+                    {% elseif key == 'clubs' %}
+                        <a href="clubs.php" class="learn-more">Learn More</a>
+                    {% elseif key == 'support' %}
+                        <a href="support.php" class="learn-more">Learn More</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include 'index2.twig' %} <!-- Include the footer file -->
+</body>
+</html>
