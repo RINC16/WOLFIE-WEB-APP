@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation | University Life</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    {% include 'index1.twig' %}
+
+    <main class="site-main">
+        <section class="content-section">
+            <h1>Accommodation</h1>
+            <p>Find the perfect place to call home during your university years.</p>
+
+            <div class="accommodation-options">
+                <h2>On-Campus Accommodation</h2>
+                <div class="option">
+                    <img src="images/halls.jpg" alt="Halls of Residence">
+                    <h3>Halls of Residence</h3>
+                    <p>Description of halls of residence, facilities, and benefits.</p>
+                    <ul>
+                        <li>Types of rooms available</li>
+                        <li>Catering options</li>
+                        <li>Costs and application process</li>
+                    </ul>
+                </div>
+
+                <h2>Off-Campus Accommodation</h2>
+                <div class="option">
+                    <img src="images/private-housing.jpg" alt="Private Housing">
+                    <h3>Private Housing</h3>
+                    <p>Information about finding private housing, including shared houses, flats, and studios.</p>
+                    <ul>
+                        <li>Tips for finding accommodation</li>
+                        <li>Average costs</li>
+                        <li>Information on tenancy agreements</li>
+                    </ul>
+                </div>
+                
+                <div class="option">
+                    <img src="images/homestay.jpg" alt="Homestay">
+                    <h3>Homestay</h3>
+                    <p>Information about living with a local family.</p>
+                    <ul>
+                        <li>Benefits of homestay</li>
+                        <li>Finding homestay providers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-info">
+                <h2>How to Apply for Accommodation</h2>
+                <p>Step-by-step guide on the accommodation application process.</p>
+                <a href="#" class="cta-button">Apply Now</a>
+            </div>
+        </section>
+    </main>
+
+    {% include 'index2.twig' %}
+    <script src="js/scripts.js"></script>
+</body>
+</html>
