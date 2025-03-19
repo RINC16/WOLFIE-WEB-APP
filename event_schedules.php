@@ -1,22 +1,39 @@
 <?php
-// Start the session and include necessary files
+// Secure session start
+session_set_cookie_params([
+    'Secure' => true, 
+    'HttpOnly' => true, 
+    'SameSite' => 'Strict'
+]);
 session_start();
-require_once 'db.php'; // connection to database
+session_regenerate_id(true);
+
+// Include necessary files and check connection
+require_once 'db.php'; 
 require_once 'vendor/autoload.php';
 
-// Fetch events from database
-$events = []; 
-$query = "SELECT event_id, title, description, start_time, end_time, location FROM Events ORDER BY start_time ASC";
-$result = $db->query($query);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $events[] = $row;
-    }
+if (!$db) {
+    die("Database connection failed!");
 }
 
-// Setting up Twig
-$loader = new \Twig\Loader\FilesystemLoader('/home/stud/1/2378831/public_html/OpenDay/templates');
+// Secure database query with prepared statements
+$stmt = $db->prepare("SELECT event_id, title, description, start_time, end_time, location FROM Events ORDER BY start_time ASC");
+if (!$stmt) {
+    error_log("Database error: " . $db->error); // Log the error
+    die("Database error!"); // Generic error message for security
+}
+$stmt->execute();
+$result = $stmt->get_result();
+$events = $result->fetch_all(MYSQLI_ASSOC);
+
+// Set security headers
+header("X-Frame-Options: DENY");
+header("X-Content-Type-Options: nosniff");
+header("Referrer-Policy: no-referrer-when-downgrade");
+header("Content-Security-Policy: default-src 'self'");
+
+// Initialize Twig securely
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
 $twig = new \Twig\Environment($loader);
 
 // Render the Twig template with events data
