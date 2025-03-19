@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Schedules</title>
-    <link rel="stylesheet" href="event_styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     {% include 'index1.twig' %}
@@ -12,21 +12,32 @@
     <main class="site-main">
         <h1>Event Schedule</h1>
         <div class="event-schedule">
-            {% for event in events %}
-            <div class="event">
-                <h2>{{ event.title }}</h2>
-                <p>{{ event.description }}</p>
-                <p>Time: {{ event.start_time|date("g:i A") }} - {{ event.end_time|date("g:i A") }}</p>
-                <p>Location: {{ event.location }}</p>
-                <button class="add-reminder" data-event-name="{{ event.title }}" data-event-time="{{ event.start_time }}">Add to Calendar</button>
-            </div>
+            {% if events is defined and events|length > 0 %}
+                {% for event in events %}
+                <div class="event">
+                    <h2>{{ event.title | e }}</h2>
+                    <p>{{ event.description | e }}</p>
+                    <p>Time: 
+                        {{ event.start_time is defined and event.start_time ? event.start_time|date("g:i A") : 'N/A' }} - 
+                        {{ event.end_time is defined and event.end_time ? event.end_time|date("g:i A") : 'N/A' }}
+                    </p>
+                    <p>Location: {{ event.location | e }}</p>
+                    <button class="add-reminder" 
+                        data-event-name="{{ event.title | e('html_attr') }}" 
+                        data-event-time="{{ event.start_time | e('html_attr') }}">
+                        Add to Calendar
+                    </button>
+                </div>
+                {% endfor %}
             {% else %}
-            <p>No events scheduled.</p>
-            {% endfor %}
+                <p>No events scheduled.</p>
+            {% endif %}
         </div>
     </main>
 
     {% include 'index2.twig' %}
-    <script src="js/scripts.js"></script>
+
+    <!-- Secure JavaScript Inclusion -->
+    <script src="js/scripts.js" integrity="sha384-..." crossorigin="anonymous"></script>
 </body>
 </html>
