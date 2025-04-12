@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    flex: 1 0 auto; /* Flex grow, shrink, and basis */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Ensures that the content section takes up all available space */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gallery, .campus-map {
+    flex: 1; /* Allows each section to fill equal space */
+    margin-bottom: 20px;
+}
+
+.gallery .card {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery .card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery img {
+    width: 200%; /* Ensures images are fully responsive */
+    height: auto;
+    display: block;
+}
+
+#map {
+    height: 400%; /* Adjust this if the map needs to be shorter or taller */
+    width: 200%;
+}
+
+@media (max-width: 768px) {
+    .col-md-8 {
+        max-width: 150%; /* You can adjust this percentage based on your design preference */
+    }
+
+    .gallery .card {
+        margin-bottom: 15px;
+    }
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, #ffd700 0%, #0000ff 50%, #000 100%);
+    margin-top: 20px;
+    padding: 60px 0; /* Increased padding for more space */
+    animation: fadeIn 2s ease-out;
+    transform: scale(0.8); /* Scales down the section to 80% of its original size */
+    transform-origin: center; /* Ensures the scaling is centered */
+}
+
+h1 {
+    font-family: 'Arial', sans-serif; /* Example: Switch this to a more elegant font if available */
+    letter-spacing: 0.5px; /* Adjust letter spacing for better readability and style */
+    text-transform: uppercase; /* Makes the text uppercase for more impact */
+}
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Even smaller on mobile devices */
+    }
+    .welcome-section {
+        padding: 20px 0;
+        transform: scale(0.7);
+    }
+}
